@@ -36,7 +36,7 @@ loop do
   puts "\n"
   print_divider
 
-  puts "Got all ingredients you need? (Y\N)"
+  puts "Got all ingredients you need? (Y/N)"
   answer = gets.chomp.upcase
 
   if answer == "N"
@@ -66,3 +66,10 @@ steps = [
   { description: "When almost set, invert on a plate and slide back into the pan", action: "generic_recipe_step" },
   { description: "Cook a few more minutes and slide on to a plate and cool for 10 minutes before serving", action: "generic_recipe_step" }
 ]
+
+print_divider
+puts "See below the different steps to follow:"
+
+steps.each_with_index do |step, index|
+  puts (index + 1).to_s + ") " + step[:description]
+end
